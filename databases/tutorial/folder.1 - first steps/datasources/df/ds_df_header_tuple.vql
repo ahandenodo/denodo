@@ -1,0 +1,9 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE DATASOURCE DF ds_df_header_tuple
+    FOLDER = '/1 - first steps'
+    ROUTE LOCAL 'LocalConnection' '${databases.tutorial.folder.1 - first steps.datasources.df.ds_df_header_tuple.ROUTE.LOCAL.PATH}' FILENAMEPATTERN = ''
+    TUPLEPATTERN = '(.+)-(.+)-(.+)'
+    HEADERPATTERN = '(.+)-(.+)-(.+)'
+    ENDOFLINEDELIMITER = '\n'
+    HEADER = TRUE;
+

@@ -1,0 +1,29 @@
+﻿CREATE OR REPLACE WRAPPER DF ds_df_regular_test
+    FOLDER = '/2 - base views'
+    DATASOURCENAME=ds_df_regular_test
+    OUTPUTSCHEMA (
+        id = 'id',
+        job = 'job',
+        department = 'department'
+    );
+
+CREATE OR REPLACE TABLE bv_df_regular_test I18N us_mst (
+        id:text,
+        job:text,
+        department:text
+    )
+    FOLDER = '/2 - base views'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD ds_df_regular_test(
+        I18N us_mst
+        CONSTRAINTS (
+             ADD id NOS ZERO ()
+             ADD job NOS ZERO ()
+             ADD department NOS ZERO ()
+        )
+        OUTPUTLIST (department, id, job
+        )
+        WRAPPER (df ds_df_regular_test)
+    );
+

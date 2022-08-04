@@ -1,0 +1,9 @@
+﻿CREATE OR REPLACE VIEW p_address FOLDER = '/2 - base views' AS SELECT address.client_fid AS client_fid, address.street AS street, address.city AS city, address.zip AS zip FROM address WHERE client_fid < 'C009' GROUP BY address.client_fid, address.street, address.city, address.zip;
+
+ALTER VIEW p_address
+ LAYOUT (address = [20, 20, 200, 145]);
+
+ALTER VIEW p_address
+ CACHE PARTIAL
+     BATCHSIZEINCACHE DEFAULT TIMETOLIVEINCACHE DEFAULT;
+

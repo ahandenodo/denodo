@@ -1,0 +1,29 @@
+﻿CREATE OR REPLACE WRAPPER DF "ds_df_header_tuple_82cfb04f-2f75-4ab9-9b1e-12d048f6ee0a"
+    FOLDER = '/1 - first steps'
+    DATASOURCENAME=ds_df_header_tuple
+    OUTPUTSCHEMA (
+        id = 'id',
+        job = 'job',
+        department = 'department'
+    );
+
+CREATE OR REPLACE TABLE ds_df_header_tuple I18N us_mst (
+        id:text,
+        job:text,
+        department:text
+    )
+    FOLDER = '/1 - first steps'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD ds_df_header_tuple(
+        I18N us_mst
+        CONSTRAINTS (
+             ADD id NOS ZERO ()
+             ADD job NOS ZERO ()
+             ADD department NOS ZERO ()
+        )
+        OUTPUTLIST (department, id, job
+        )
+        WRAPPER (df "ds_df_header_tuple_82cfb04f-2f75-4ab9-9b1e-12d048f6ee0a")
+    );
+
