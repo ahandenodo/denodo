@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE TABLE bv_days I18N us_mst (
-        rank:int (sourcetypeid = '-5', sourcetypesize = '10'),
+        rank:long (sourcetypeid = '-5', sourcetypesize = '10'),
         firstname:text (sourcetypeid = '12'),
         start_time:localdate (sourcetypeid = '91')
     )
