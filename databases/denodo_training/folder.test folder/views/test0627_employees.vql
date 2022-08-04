@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW test0627_employees FOLDER = '/test folder' AS SELECT employee_id AS employee_id, hire_date AS hire_date FROM bv_hr_employees GROUP BY employee_id, hire_date;
+
+ALTER VIEW test0627_employees
+ LAYOUT (bv_hr_employees = [20, 20, 265, 245]);
+

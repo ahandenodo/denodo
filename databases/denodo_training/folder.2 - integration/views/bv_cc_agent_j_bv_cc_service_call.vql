@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW bv_cc_agent_j_bv_cc_service_call FOLDER = '/2 - integration' AS SELECT bv_cc_agent.agent_id AS agent_id, bv_cc_agent.agent_code AS agent_code, bv_cc_agent.agent_name AS agent_name, bv_cc_service_call.call_id AS call_id, bv_cc_service_call.location_id AS location_id, bv_cc_service_call.problem_code AS problem_code, bv_cc_service_call.status_code AS status_code, bv_cc_service_call.date_ticket_issued AS date_ticket_issued, bv_cc_service_call.date_call_received AS date_call_received, bv_cc_service_call.other_details AS other_details, bv_cc_service_call.caller_phone AS caller_phone, bv_cc_service_call.case_id AS case_id, bv_cc_service_call.customer_code AS customer_code FROM bv_cc_agent AS bv_cc_agent INNER JOIN bv_cc_service_call AS bv_cc_service_call ON bv_cc_agent.agent_id = bv_cc_service_call.agent_id  WHERE bv_cc_agent.agent_id < 100;
+
+ALTER VIEW bv_cc_agent_j_bv_cc_service_call
+ LAYOUT (bv_cc_agent = [20, 20, 200, 85], bv_cc_service_call = [360, 60, 290, 230]);
+

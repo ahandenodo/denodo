@@ -1,0 +1,4 @@
+﻿UNDEPLOY IF EXISTS WEBSERVICE bv_hr_jobs;
+
+DEPLOY WEBSERVICE bv_hr_jobs;
+

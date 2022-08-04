@@ -1,0 +1,20 @@
+﻿CREATE OR REPLACE TABLE bv_days I18N us_mst (
+        rank:int (sourcetypeid = '-5', sourcetypesize = '10'),
+        firstname:text (sourcetypeid = '12'),
+        start_time:localdate (sourcetypeid = '91')
+    )
+    FOLDER = '/test folder'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD days(
+        I18N us_mst
+        CONSTRAINTS (
+             ADD rank (any) OPT ANY
+             ADD firstname (any) OPT ANY
+             ADD start_time (any) OPT ANY
+        )
+        OUTPUTLIST (firstname, rank, start_time
+        )
+        WRAPPER (custom days)
+    );
+

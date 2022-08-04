@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW t_split_product FOLDER = '/test folder' AS SELECT productprice AS productprice, code AS code, split('\.', productprice) AS split_productprice FROM bv_product GROUP BY code, productprice;
+
+ALTER VIEW t_split_product
+ LAYOUT (bv_product = [20, 20, 200, 200]);
+

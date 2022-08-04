@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW p_null_value_customer FOLDER = '/2 - integration' AS SELECT customer_id AS customer_id, customer_name AS customer_name, customer_code AS customer_code, case WHEN (customer_code is null ) THEN 'null_value' ELSE customer_code END AS customer_null_vlaue FROM bv_cc_customer GROUP BY customer_name, customer_id, customer_code;
+
+ALTER VIEW p_null_value_customer
+ LAYOUT (bv_cc_customer = [20, 20, 230, 165]);
+

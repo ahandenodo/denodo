@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW f_f_person FOLDER = '/test folder/ldap users' AS SELECT seealso, sn, telephonenumber, userpassword, description, cn FROM FLATTEN f_person AS v ( v.cn);
+
+ALTER VIEW f_f_person
+ LAYOUT (f_person = [20, 20, 338, 245]);
+
