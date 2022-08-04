@@ -1,8 +1,0 @@
-﻿/databases/denodo_training/folder.test folder/test folder.vql
-/databases/denodo_training/folder.test folder/folder.ldap users/ldap users.vql
-/databases/denodo_training/folder.1 - connectivity/1 - connectivity.vql
-/databases/denodo_training/folder.1 - connectivity/folder.1 - data sources/1 - data sources.vql
-/databases/denodo_training/folder.1 - connectivity/folder.1 - data sources/datasources/ldap/ds_active_directory.vql
-/databases/denodo_training/folder.test folder/folder.ldap users/views/person.vql
-/databases/denodo_training/folder.test folder/folder.ldap users/views/f_person.vql
-/databases/denodo_training/folder.test folder/folder.ldap users/views/f_f_person.vql
