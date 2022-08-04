@@ -1,8 +1,0 @@
-﻿CREATE OR REPLACE VIEW f_t_split_product FOLDER = '/test folder' (
-    productprice (description = 'trial')
-)
- AS SELECT productprice AS productprice, string AS dollar, split('\.', productprice) AS cent FROM FLATTEN t_split_product AS v ( v.split_productprice);
-
-ALTER VIEW f_t_split_product
- LAYOUT (t_split_product = [20, 20, 200, 105]);
-
