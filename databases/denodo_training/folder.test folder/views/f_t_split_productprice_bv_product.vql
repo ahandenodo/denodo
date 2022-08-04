@@ -1,5 +1,0 @@
-﻿CREATE OR REPLACE VIEW f_t_split_productprice_bv_product FOLDER = '/test folder' AS SELECT code AS code, description AS description, warnings AS warnings, numresults AS numresults, productid AS productid, productname AS productname, productprice AS productprice, category AS category, characteristics AS characteristics, accessories AS accessories, string AS string FROM FLATTEN t_split_productprice_bv_product AS v ( v.split_productprice);
-
-ALTER VIEW f_t_split_productprice_bv_product
- LAYOUT (t_split_productprice_bv_product = [20, 20, 200, 200]);
-
