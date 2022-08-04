@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW bv_cc_customer_u_bv_old_invoices FOLDER = '/1 - connectivity/2 - base views' AS SELECT customer_id, customer_name, customer_address, phone_number, customer_code, job_title, other_details, invoice, email, date_closed, order, cost, name, surname, country, address, postal_code, phone FROM (SELECT * FROM bv_cc_customer EXTENDED UNION ALL SELECT * FROM bv_old_invoices);
+
+ALTER VIEW bv_cc_customer_u_bv_old_invoices
+ LAYOUT (bv_cc_customer = [50, 70, 200, 165], bv_old_invoices = [340, 60, 200, 225]);
+
